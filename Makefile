@@ -4,4 +4,4 @@ install:
 test:
 	yarn test
 
-deploy: test
+deploy: install test
