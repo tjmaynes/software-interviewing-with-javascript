@@ -1,36 +1,40 @@
 class MyArray {
     constructor() {
-        this.data = [];
-        this.length = 0;
+        this._data = [];
+        this._length = 0;
     }
 
     get(index) {
-        const item = this.data[index];
+        const item = this._data[index];
         if (!item) throw "Item not found!"
         return item;
     }
 
     push(item) {
-        if (this.data.indexOf(item) == -1) {
-            this.data[this.length] = item;
-            this.length += 1;
+        if (this._data.indexOf(item) == -1) {
+            this._data[this._length] = item;
+            this._length += 1;
         }
     }
 
     pop() {
-        if (this.length <= 0) throw "No items left to pop!"
+        if (this._length <= 0) throw "No items left to pop!"
 
-        const item = this.data[this.length - 1];
-        this.data[this.length - 1] = null;
-        this.length -= 1;
+        const item = this._data[this._length - 1];
+        this._data[this._length - 1] = null;
+        this._length -= 1;
         return item;
     }
 
     remove(index) {
-        if (this.data[index] == null) throw "Item not found!"
+        if (this._data[index] == null) throw "Item not found!"
 
-        this.data[index] = null;
-        this.length -= 1;
+        this._data[index] = null;
+        this._length -= 1;
+    }
+
+    size() {
+        return this._length;
     }
 }
 
@@ -75,7 +79,7 @@ describe("MyArray", () => {
                 array.push(45);
                 array.push(45);
 
-                expect(array.length).toBe(1);
+                expect(array.size()).toBe(1);
             });
         });
     });
@@ -91,7 +95,7 @@ describe("MyArray", () => {
                 let result = array.pop();
 
                 expect(result).toBe(14);
-                expect(array.length).toBe(1);
+                expect(array.size()).toBe(1);
             });
         });
 
@@ -113,12 +117,12 @@ describe("MyArray", () => {
                 array.remove(0);
 
                 expect(() => array.get(0)).toThrow("Item not found!");
-                expect(array.length).toBe(1);
+                expect(array.size()).toBe(1);
 
                 array.remove(1);
 
                 expect(() => array.get(1)).toThrow("Item not found!");
-                expect(array.length).toBe(0);
+                expect(array.size()).toBe(0);
             });
         });
 

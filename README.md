@@ -25,7 +25,7 @@ make test
 | Type               | Access | Search | Insertion | Deletion |
 |--------------------|--------|--------|-----------|----------|
 | Array              |  O(1)  | O(n)   | O(n)      | O(n)     |
-| Stack              |        |        |           |          |
+| Stack              |  O(n)  | O(n)   | O(1)      | O(1)     |
 | Singly-Linked List |        |        |           |          |
 | Doubly-Linked List |        |        |           |          |
 | Hash Table         |        |        |           |          |
