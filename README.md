@@ -20,9 +20,11 @@ make test
 
 ### Big-O Time Complexity
 
+#### Common Data Structures
+
 | Type               | Access | Search | Insertion | Deletion |
 |--------------------|--------|--------|-----------|----------|
-| Array              |        |        |           |          |
+| Array              |  O(1)  | O(n)   | O(n)      | O(n)     |
 | Stack              |        |        |           |          |
 | Singly-Linked List |        |        |           |          |
 | Doubly-Linked List |        |        |           |          |
@@ -30,7 +32,7 @@ make test
 | Queue              |        |        |           |          |
 | Binary Search Tree |        |        |           |          |
 
-## Sorting Algorithms
+#### Sorting Algorithms
 
 | Algorithm          | Worst | Average | Best | Worst Space Complexity |
 |--------------------|-------|---------|------|------------------------|
