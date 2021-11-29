@@ -1,37 +1,10 @@
-class MyArrayStack {
-    constructor() {
-        this._data = [];
-        this._length = 0;
-    }
+import { MyLinkedListStack } from "./LinkedListStack";
 
-    peek() {
-        if (this._length <= 0) throw "No items to peek!";
-        return this._data[0];
-    }
-
-    push(item) {
-        this._data.unshift(item);
-        this._length += 1;
-    }
-
-    pop() {
-        const item = this._data.shift();
-        if (!item) throw "No items left to pop!";
-
-        this._length -= 1;
-        return item;
-    }
-
-    size() {
-        return this._length;
-    }
-}
-
-describe("MyArrayStack", () => {
+describe("MyLinkedListStack", () => {
     let stack;
 
     beforeEach(() => {
-        stack = new MyArrayStack();
+        stack = new MyLinkedListStack();
     });
     
 
@@ -61,6 +34,11 @@ describe("MyArrayStack", () => {
 
             expect(stack.peek()).toBe("hello");
             expect(stack.size()).toBe(2);
+
+            stack.push(null);
+
+            expect(stack.peek()).toBe("hello");
+            expect(stack.size()).toBe(2);
         });
     });
 
@@ -73,7 +51,7 @@ describe("MyArrayStack", () => {
 
             it("should return the top item in the stack and remove item", () => {
                 const result = stack.pop();
-                
+
                 expect(result).toBe(12);
                 expect(stack.size()).toBe(1);
             });

@@ -26,8 +26,8 @@ make test
 |--------------------|--------|--------|-----------|----------|
 | Array              |  O(1)  | O(n)   | O(n)      | O(n)     |
 | Stack              |  O(n)  | O(n)   | O(1)      | O(1)     |
-| Singly-Linked List |        |        |           |          |
-| Doubly-Linked List |        |        |           |          |
+| Singly-Linked List |  O(n)  | O(n)   | O(1)      | O(1)     |
+| Doubly-Linked List |  O(n)  | O(n)   | O(1)      | O(1)     |
 | Hash Table         |        |        |           |          |
 | Queue              |        |        |           |          |
 | Binary Search Tree |        |        |           |          |
